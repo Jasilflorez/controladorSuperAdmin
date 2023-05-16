@@ -43,7 +43,7 @@ export default function Validacion() {
       formulario =>
         formulario.correo === correo &&
         formulario.clave === clave &&
-        formulario.rol === "usuario" 
+        formulario.rol !== "admin" 
     );
 
     if (usuarioValido) {

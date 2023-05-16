@@ -110,12 +110,16 @@ export default function OtraVista() {
                     />
                   </td>
                   <td>
-                    <input
-                      className="input_valor"
-                      type="text"
-                      value={edicionRol}
+                    <select
                       onChange={e => setEdicionRol(e.target.value)}
-                    />
+                      className="input_valor"
+                    >
+                      <option selected="true" disabled="disabled">
+                        Selecciona un rol
+                      </option>
+                      <option value="admin">Admin</option>
+                      <option value="usuario">Usuario</option>
+                    </select>
                   </td>
                   <td>
                     <button

@@ -1,0 +1,7 @@
+.Box_VistaUsuario{
+    height: 100%;
+    width: 100%;
+    background-image: url("../img/fondoUsuario.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}

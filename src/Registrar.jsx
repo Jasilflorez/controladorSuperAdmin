@@ -19,11 +19,12 @@ export default function Registro() {
         try {
           const parsedFormularios = JSON.parse(storedFormularios);
           setFormulariosGuardados(parsedFormularios);
-        } catch (error) {
+        } 
+        catch (error) {
           console.error("Error al analizar JSON:", error);
         }
       } else {
-        console.log("El valor almacenado es undefined");
+        console.log("Error al cargar los datos para la base de dato");
       }
     }
   }, []);
@@ -54,7 +55,7 @@ export default function Registro() {
       form => form.correo === formulario.correo
     );
     if (correoExistente) {
-      swal("El correo ya está registrado Intente con otro", "error");
+      swal("El correo ya está registrado. Intente con otro.", "error");
       return;
     }
 

@@ -10,7 +10,6 @@ export default function HeaderNav() {
             Iniciar Sesion
           </Link>
         </li> 
-
         <li className="nav-item">
           <Link to="/Registrar" className="nav-link">
             Registrar
