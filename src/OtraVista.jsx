@@ -66,7 +66,7 @@ export default function OtraVista() {
 
   return (
     <div className="Vista_De_usuario">
-      <h1>Usuarios de jasil</h1>
+      <h5 className="VistaTitutlo">Usuarios Registrado</h5>
       <table className="tabla-usuarios">
         <thead>
           <tr>
