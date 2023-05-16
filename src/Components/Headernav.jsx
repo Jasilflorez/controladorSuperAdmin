@@ -7,7 +7,7 @@ export default function HeaderNav() {
       <ul className="nav-list">
         <li className="nav-item">
           <Link to="/Login" className="nav-link">
-            Iniciar Sesion 1
+            Iniciar Sesion
           </Link>
         </li> 
 

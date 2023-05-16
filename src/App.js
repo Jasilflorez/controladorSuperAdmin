@@ -4,6 +4,7 @@ import Validacion from "./Validacion";
 import OtraVista from "./OtraVista";
 import Registrar from "./Registrar";
 import Headernav from "./Components/Headernav";
+import Vistausuario from "./Components/Vistausuario";
 import "./App.css";
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
         <Routes>
           <Route path="/Login" element={<Validacion />} />
           <Route path="/Registrar" element={<Registrar />} />
-          <Route path="/otra-vista" element={<OtraVista />} />
+          <Route path="/admin" element={<OtraVista />} />
+          <Route path="/Usuario" element={<Vistausuario />} />
         </Routes>
       </div>
     </Router>

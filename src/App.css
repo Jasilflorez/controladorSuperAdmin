@@ -116,11 +116,9 @@
 }
 /* vista de Adminitracion de usuario */
 .VistaTitutlo{
-  color: rgb(8, 8, 8);
+  color: rgb(255, 255, 255);
   font-size: 35px;
-  background-color: rgb(253, 254, 254);
   border-radius: 10px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .Vista_De_usuario{
   height: 100%;

@@ -6,6 +6,7 @@ export default function OtraVista() {
   const [edicionUsuario, setEdicionUsuario] = useState(null);
   const [edicionCorreo, setEdicionCorreo] = useState("");
   const [edicionClave, setEdicionClave] = useState("");
+  const [edicionRol, setEdicionRol] = useState("");
 
   useEffect(() => {
     const storedFormularios = localStorage.getItem("formularios");
@@ -30,16 +31,22 @@ export default function OtraVista() {
     setEdicionUsuario(usuario);
     setEdicionCorreo(usuario.correo);
     setEdicionClave(usuario.clave);
+    setEdicionRol(usuario.rol);
   };
 
   const handleCancelarEdicion = () => {
     setEdicionUsuario(null);
     setEdicionCorreo("");
     setEdicionClave("");
+    setEdicionRol("");
   };
 
   const handleGuardarEdicion = () => {
-    if (edicionCorreo.trim() === "" || edicionClave.trim() === "") {
+    if (
+      edicionCorreo.trim() === "" ||
+      edicionClave.trim() === "" ||
+      edicionRol.trim() === ""
+    ) {
       swal("Por favor, complete todos los campos", "error");
       return;
     }
@@ -55,7 +62,12 @@ export default function OtraVista() {
 
     const nuevosUsuarios = usuarios.map(usuario =>
       usuario === edicionUsuario
-        ? { ...usuario, correo: edicionCorreo, clave: edicionClave }
+        ? {
+            ...usuario,
+            correo: edicionCorreo,
+            clave: edicionClave,
+            rol: edicionRol,
+          }
         : usuario
     );
 
@@ -66,12 +78,13 @@ export default function OtraVista() {
 
   return (
     <div className="Vista_De_usuario">
-      <h5 className="VistaTitutlo">Usuarios Registrado</h5>
+      <h5 className="VistaTitutlo">Controlador Super Admin</h5>
       <table className="tabla-usuarios">
         <thead>
           <tr>
             <th>Correo</th>
             <th>Clave</th>
+            <th>Rol</th>
             <th>Acciones</th>
           </tr>
         </thead>
@@ -97,6 +110,14 @@ export default function OtraVista() {
                     />
                   </td>
                   <td>
+                    <input
+                      className="input_valor"
+                      type="text"
+                      value={edicionRol}
+                      onChange={e => setEdicionRol(e.target.value)}
+                    />
+                  </td>
+                  <td>
                     <button
                       className="BT_Edicione"
                       onClick={handleGuardarEdicion}
@@ -115,6 +136,7 @@ export default function OtraVista() {
                 <>
                   <td>{usuario.correo}</td>
                   <td>{usuario.clave}</td>
+                  <td>{usuario.rol}</td>
                   <td>
                     <button
                       className="btn-editar"

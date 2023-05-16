@@ -3,7 +3,11 @@ import "./App.css";
 import swal from "sweetalert";
 
 export default function Registro() {
-  const [formulario, setFormulario] = useState({ correo: "", clave: "" });
+  const [formulario, setFormulario] = useState({
+    correo: "",
+    clave: "",
+    rol: "",
+  });
   const [formulariosGuardados, setFormulariosGuardados] = useState();
 
   useEffect(() => {
@@ -36,33 +40,29 @@ export default function Registro() {
     event.preventDefault();
 
     // Validar campos vacíos
-    if (formulario.correo === "" || formulario.clave === "") {
-      swal(
-        "Por favor, complete todos los campos",
-        "You clicked the button!",
-        "error"
-      );
+    if (
+      formulario.correo === "" ||
+      formulario.clave === "" ||
+      formulario.rol === ""
+    ) {
+      swal("Por favor, complete todos los campos", "error");
       return;
     }
 
     // Validar correo existente
-    const correoExistente = formulariosGuardados?.find(
+    const correoExistente = formulariosGuardados.find(
       form => form.correo === formulario.correo
     );
     if (correoExistente) {
-      swal(
-        "El correo ya está registrado. Intente con otro.",
-        "You clicked the button!",
-        "error"
-      );
+      swal("El correo ya está registrado Intente con otro", "error");
       return;
     }
 
     setFormulariosGuardados(prevFormularios => [
-      ...(prevFormularios || []),
+      ...prevFormularios,
       formulario,
     ]);
-    setFormulario({ correo: "", clave: "" });
+    setFormulario({ correo: "", clave: "", rol: "" });
   };
 
   useEffect(() => {
@@ -89,6 +89,18 @@ export default function Registro() {
           value={formulario.clave}
           onChange={handleInputChange}
         />
+        <select
+          className="input_valor"
+          name="rol"
+          value={formulario.rol}
+          onChange={handleInputChange}
+        >
+          <option disabled value="">
+            Selecciona tu rol
+          </option>
+          <option value="admin">Admin</option>
+          <option value="usuario">Usuario</option>
+        </select>
         <button className="BT_enviar" type="submit">
           Enviar
         </button>

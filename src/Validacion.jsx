@@ -16,7 +16,6 @@ export default function Validacion() {
         setFormulariosGuardados(parsedFormularios);
       } catch (error) {
         console.error("Error parsing stored formularios:", error);
-        // Handle the error or set formularios to a default value
       }
     }
   }, []);
@@ -32,23 +31,33 @@ export default function Validacion() {
   const handleSubmit = e => {
     e.preventDefault();
 
-    // Verificar si el inicio de sesión es exitoso
+    // Verificar si el inicio de sesión es exitoso y el rol es válido
     const usuarioValido = formulariosGuardados.some(
-      formulario => formulario.correo === correo && formulario.clave === clave 
+      formulario =>
+        formulario.correo === correo &&
+        formulario.clave === clave &&
+        formulario.rol === "admin" 
+    );
+
+    const usuarioValido2 = formulariosGuardados.some(
+      formulario =>
+        formulario.correo === correo &&
+        formulario.clave === clave &&
+        formulario.rol === "usuario" 
     );
 
     if (usuarioValido) {
       // Inicio de sesión exitoso
       swal("Inicio de sesión exitoso", "You clicked the button!", "success");
-
       // Redireccionar a otra vista o realizar alguna acción
-      window.location.href = "/otra-vista";
-    } else {
-      // Inicio de sesión fallido
-      swal("Inicio de sesión fallido", "You clicked the button!", "error");
+      window.location.href = "/admin";
     }
-
-    // Limpiar los campos del formulario
+    if (usuarioValido2) {
+      window.location.href = "/usuario";
+    } 
+    else {
+      swal("Inicio de sesión fallido", "You clicked the button!","error");
+    }
     setCorreo("");
     setClave("");
   };
