@@ -1,7 +1,22 @@
-.Box_VistaUsuario{
+.Box_VistaUsuario {
     height: 100%;
     width: 100%;
-    background-image: url("../img/fondoUsuario.jpg");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
+    display: flex;
+}
+
+.bot-container {
+    height: 80%;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}
+
+.chatbot {
+    width: 65%;
+    height: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

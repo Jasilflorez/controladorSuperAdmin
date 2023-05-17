@@ -45,8 +45,8 @@ export default function Registro() {
       formulario.correo === "" ||
       formulario.clave === "" ||
       formulario.rol === ""
-    ) {
-      swal("Por favor, complete todos los campos", "error");
+    ){
+      swal("Por favor complete todos los campos","click al boton","error");
       return;
     }
 
@@ -55,7 +55,7 @@ export default function Registro() {
       form => form.correo === formulario.correo
     );
     if (correoExistente) {
-      swal("El correo ya está registrado. Intente con otro.", "error");
+      swal("El correo ya está registrado Intente con otro.","click al boton","error");
       return;
     }
 

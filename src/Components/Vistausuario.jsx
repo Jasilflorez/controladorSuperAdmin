@@ -1,12 +1,17 @@
-import React from "react";
-import './css/Vistas.css'
+import React, { useState } from "react";
+import "./css/Vistas.css";
+import Bot from "./Bot";
+
 function Vistausuario() {
-  return( 
-  <div className="Box_VistaUsuario">
-    <section className="Desarroladores">
-      
-    </section>
-  </div>
+  const [backgroundColor, setBackgroundColor] = useState("#0582ff");
+
+  const handleBackgroundColorChange = color => {
+    setBackgroundColor(color);
+  };
+  return (
+    <div className="Box_VistaUsuario" style={{ backgroundColor }}>
+      <Bot onColorChange={handleBackgroundColorChange} />
+    </div>
   );
 }
 
