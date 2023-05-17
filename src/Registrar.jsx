@@ -8,7 +8,7 @@ export default function Registro() {
     clave: "",
     rol: "",
   });
-  const [formulariosGuardados, setFormulariosGuardados] = useState();
+  const [formulariosGuardados, setFormulariosGuardados] = useState([]);
 
   useEffect(() => {
     const storedFormularios = localStorage.getItem("formularios");
