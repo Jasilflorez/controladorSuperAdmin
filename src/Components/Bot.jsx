@@ -5,7 +5,7 @@ import ChatBot from "react-simple-chatbot";
 function Bot({ onColorChange }) {
   const [backgroundColor, setBackgroundColor] = useState("#f5f8fb");
 
-  const steps = [
+  const steps = [   
     {
     id: "1",
     message: "¡Hola! Soy un bot. puedo cambiar color de tu fondo",

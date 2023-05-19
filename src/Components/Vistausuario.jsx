@@ -3,7 +3,7 @@ import "./css/Vistas.css";
 import Bot from "./Bot";
 
 function Vistausuario() {
-  const [backgroundColor, setBackgroundColor] = useState("#0582ff");
+  const [backgroundColor, setBackgroundColor] = useState("");
 
   const handleBackgroundColorChange = color => {
     setBackgroundColor(color);

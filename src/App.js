@@ -12,7 +12,7 @@ function App() {
       <Headernav />
       <div className="App">
         <Routes>
-          <Route path="/Login" element={<Validacion />} />
+          <Route path="/" element={<Validacion />} />
           <Route path="/Registrar" element={<Registrar />} />
           <Route path="/admin" element={<OtraVista />} />
           <Route path="/Usuario" element={<Vistausuario />} />

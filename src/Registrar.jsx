@@ -72,7 +72,7 @@ export default function Registro() {
 
   return (
     <div className="formulario">
-      <h1>Registrar</h1>
+      <h1 className="TituloFormulario">Registrar</h1>
       <form className="Cart_formulario" onSubmit={handleSubmit}>
         <input
           type="email"

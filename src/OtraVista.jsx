@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { TbEdit } from 'react-icons/tb';
+import { AiFillDelete } from 'react-icons/ai';
+import { BiSave } from 'react-icons/bi';
+import { GiCancel } from 'react-icons/gi';
 import swal from "sweetalert";
 
 export default function OtraVista() {
@@ -123,16 +127,16 @@ export default function OtraVista() {
                   </td>
                   <td>
                     <button
-                      className="BT_Edicione"
+                      className="btn-editar"
                       onClick={handleGuardarEdicion}
                     >
-                      Guardar
+                      {<BiSave/>}
                     </button>
                     <button
-                      className="BT_Edicione"
+                      className="btn-eliminar"
                       onClick={handleCancelarEdicion}
                     >
-                      Cancelar
+                      {<GiCancel/>}
                     </button>
                   </td>
                 </>
@@ -146,13 +150,13 @@ export default function OtraVista() {
                       className="btn-editar"
                       onClick={() => handleEditarUsuario(usuario)}
                     >
-                      Editar
+                      {<TbEdit/>}
                     </button>
                     <button
                       className="btn-eliminar"
                       onClick={() => handleEliminarUsuario(usuario)}
                     >
-                      Eliminar
+                      {<AiFillDelete/>}
                     </button>
                   </td>
                 </>

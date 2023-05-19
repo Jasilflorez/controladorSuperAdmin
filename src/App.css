@@ -1,16 +1,15 @@
 .App {
-  height: 90%;
+  height: 89%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 50px;
   color: rgb(0, 0, 0);
   justify-content: space-evenly;
   background: linear-gradient(45deg,
-      rgb(210, 211, 212),
-      rgb(15, 15, 15),
-      rgb(192, 190, 195));
+      rgb(62, 102, 143),
+      rgb(56, 17, 75),
+      rgb(1, 7, 19));
   animation: cambiar 10s ease infinite;
   background-size: 400% 400%;
 }
@@ -31,9 +30,10 @@
 
 /* barrra de navegacion de header */
 .header-nav {
-  background-color: #434343;
-  height: 10%;
+  background-color: #e5e6e7;
+  height: 11%;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
 }
@@ -53,27 +53,49 @@
   text-decoration: none;
   color: #080808;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 24px;
+  border-bottom: 1px solid rgb(177, 177, 177);
   margin: 15px;
 }
 
 .nav-link:hover {
-  color: #faf5f5;
+  color: #277bf9;
+}
+.BoxLogoHeader{
+  height: 100%;
+  width: 30%;
+  display: flex;
+  align-items: center;
+}
+.LogoHeader{
+  width: 112px;
+}
+.BoxTextoLogo{
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.TextLogo{
+  width: 225px;
+  padding-top: 15px;
 }
 
-
 /* stylos del formulario de login y registrar */
+.TituloFormulario{
+  font-size: 50px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 .formulario {
   width: 20%;
   height: 45%;
   display: flex;
-  border-radius: 10px;
+  border-radius: 15px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  background-color: rgb(103, 103, 103);
-  color: rgb(0, 0, 0);
+  background-color: rgb(0, 0, 0);
+  color: rgb(239, 239, 239);
   font-size: 20px;
 }
 
@@ -88,37 +110,52 @@
 
 .formulario2 {
   width: 20%;
-  height: 45%;
+  height: 55%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  font-size: 20px;
-  border-radius: 10px;
-  color: rgb(0, 0, 0);
-  background-color: rgb(136, 133, 133);
+  font-size: 15px;
+  border-radius: 15px;
+  color: rgb(253, 253, 253);
+  background-color: rgb(3, 3, 3);
+}
+.FooterFormulario{
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.LinkRedSocilia{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  cursor: pointer;
+  color: #0056b3;
 }
 
 .input_valor {
-  width: 200px;
-  height: 25px;
+  width: 250px;
+  height: 35px;
   border: none;
 }
 
 .BT_enviar {
   color: rgb(6, 6, 6);
   width: 135px;
-  height: 25px;
+  height: 35px;
   background-color: rgb(254, 251, 251);
   cursor: pointer;
   border: none;
 }
 /* vista de Adminitracion de usuario */
 .VistaTitutlo{
-  color: rgb(255, 255, 255);
+  color: #037ef9;
   font-size: 35px;
-  border-radius: 10px;
 }
 .Vista_De_usuario{
   height: 100%;
@@ -130,8 +167,8 @@
 
 /* Estilos para la tabla de usuarios */
 .tabla-usuarios {
-  width: 100%;
-  height: 20%;
+  width: 90%;
+  height: auto;
   text-align: center;
   border-collapse: collapse;
 }
@@ -140,10 +177,15 @@
 .tabla-usuarios td {
   padding: 8px;
   border: 1px solid #ddd;
+  background-color: rgb(4, 4, 4);
+  color: white;
+  font-size: 35px;
 }
 
 .tabla-usuarios th {
-  background-color: #f2f2f2;
+  background-color: #141414;
+  color: rgb(250, 247, 247);
+  font-size: 30px;
 }
 
 /* Estilos para los botones de editar y eliminar */
@@ -154,7 +196,9 @@
   cursor: pointer;
   margin: 10px;
   border-radius: 5px;
-  background-color: rgb(199, 199, 199);
+  background-color: rgb(3, 70, 132);
+  font-size: 20px;
+  color: white;
 }
 .BT_Edicione:hover{
   height: 40px;
@@ -162,6 +206,8 @@
   color: rgb(0, 0, 0);
   background-color: rgb(20, 233, 9);
   border: none;
+  font-size: 20px;
+  color: white;
 }
 
 
@@ -170,11 +216,12 @@
 .btn-editar,
 .btn-eliminar {
   height: 40px;
-  width: 120px;
+  width: 100px;
+  text-align: center;
   margin: 5px;
-  font-size: 14px;
+  font-size: 20px;
   color: #fff;
-  background-color: #007bff;
+  background-color: #f5a207;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -182,10 +229,13 @@
 
 .btn-eliminar {
   background-color: #c02a39;
+  font-size: 20px;
+  color: white;
 }
 
 .btn-editar:hover,
 .btn-eliminar:hover {
   background-color: #0056b3;
+  font-size: 20px;
 }
 

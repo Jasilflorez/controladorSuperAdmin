@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import swal from "sweetalert";
-
+import { BsFacebook } from "react-icons/bs";
+import { BsInstagram } from "react-icons/bs";
+import { FiTwitter } from "react-icons/fi";
 export default function Validacion() {
   const [correo, setCorreo] = useState("");
   const [clave, setClave] = useState("");
@@ -36,14 +38,14 @@ export default function Validacion() {
       formulario =>
         formulario.correo === correo &&
         formulario.clave === clave &&
-        formulario.rol === "admin" 
+        formulario.rol === "admin"
     );
 
     const usuarioValido2 = formulariosGuardados.some(
       formulario =>
         formulario.correo === correo &&
         formulario.clave === clave &&
-        formulario.rol !== "admin" 
+        formulario.rol !== "admin"
     );
 
     if (usuarioValido) {
@@ -54,9 +56,8 @@ export default function Validacion() {
     }
     if (usuarioValido2) {
       window.location.href = "/usuario";
-    } 
-    else {
-      swal("Inicio de sesión fallido", "You clicked the button!","error");
+    } else {
+      swal("Inicio de sesión fallido", "You clicked the button!", "error");
     }
     setCorreo("");
     setClave("");
@@ -64,7 +65,7 @@ export default function Validacion() {
 
   return (
     <div className="formulario2">
-      <h1>Iniciar</h1>
+      <h1 className="TituloFormulario">Iniciar</h1>
       <form className="Cart_formulario" onSubmit={handleSubmit}>
         <input
           className="input_valor"
@@ -84,6 +85,12 @@ export default function Validacion() {
           Iniciar
         </button>
       </form>
+      <div className="FooterFormulario">
+            <BsFacebook className="LinkRedSocilia" />
+            <FiTwitter className="LinkRedSocilia" />
+
+            <BsInstagram className="LinkRedSocilia" />
+        </div>
     </div>
   );
 }
